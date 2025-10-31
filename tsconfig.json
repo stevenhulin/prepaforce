@@ -13,11 +13,15 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+
+    "types": ["react", "react-dom", "tailwindcss"],
+
     "plugins": [
       {
         "name": "next"
       }
     ],
+
     "paths": {
       "@/*": ["./src/*"]
     }
@@ -31,4 +35,5 @@
     "**/*.mts"
   ],
   "exclude": ["node_modules"]
+  
 }

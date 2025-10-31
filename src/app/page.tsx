@@ -1,66 +1,73 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import HaloBackground from "@/components/ui/HaloBackground";
+import Hero from "@/components/home/Hero";
+import FeatureGrid from "@/components/home/FeatureGrid";
+import QCMSection from "@/components/home/QCMSection";
+import Progression from "@/components/home/Progression";
+import PricingFAQ from "@/components/home/PrincingFAQ";
+import Testimonials from "@/components/home/Testimonials";
+import TrainerTipPro from "@/components/home/TrainerTipPro";
+import Footer from "@/components/home/Footer";
+import type { Metadata } from "next";
 
-export default function Home() {
+
+export const metadata: Metadata = {
+  title: "PrépaForce",
+  description: "PrépaForce — plateforme de révision et d'entraînement PA / GPX.",
+};
+;
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main className="relative min-h-screen bg-[#0a0a0a] text-white antialiased">
+      <HaloBackground />
+
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/80 backdrop-blur">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3">
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/Logo/logo.png"
+              alt="Logo PrépaForce"
+              width={24}
+              height={24}
+              className="rounded"
             />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <span className="text-sm font-semibold text-white/90">PrépaForce</span>
+          </div>
+          <nav className="hidden items-center gap-6 text-sm text-white/60 md:flex">
+            <a href="#fiches" className="hover:text-white">Fiches</a>
+            <a href="#qcm" className="hover:text-white">QCM</a>
+            <a href="#videos" className="hover:text-white">Vidéos</a>
+            <a href="#situations" className="hover:text-white">Mises en situation</a>
+            <a href="#progression" className="hover:text-white">Progression</a>
+          </nav>
+          <div className="flex items-center gap-2">
+            <a
+              href="#"
+              className="rounded-lg border border-white/15 px-3 py-1.5 text-sm text-white/80 hover:border-white/25 hover:text-white"
+            >
+              Se connecter
+            </a>
+            <a
+              href="#get-started"
+              className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-black hover:bg-white/90"
+            >
+              Créer un compte
+            </a>
+          </div>
         </div>
-      </main>
-    </div>
+      </header>
+
+      {/* Sections principales */}
+      <Hero />
+      <FeatureGrid />
+      <QCMSection />
+      <Progression />
+      <PricingFAQ />
+      <Testimonials />
+      <TrainerTipPro />
+      <Footer />
+    </main>
   );
 }
