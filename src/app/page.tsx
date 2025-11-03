@@ -44,13 +44,13 @@ export default function HomePage() {
           </nav>
           <div className="flex items-center gap-2">
             <a
-              href="#"
+              href="login"
               className="rounded-lg border border-white/15 px-3 py-1.5 text-sm text-white/80 hover:border-white/25 hover:text-white"
             >
               Se connecter
             </a>
             <a
-              href="#get-started"
+              href="signup"
               className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-black hover:bg-white/90"
             >
               Créer un compte
